@@ -4,10 +4,18 @@ from car.car import Car
 
 from datetime import datetime
 
+from battery.battery import *
+
+from engine.engine import *
+
 
 class CarFactory(ABC):
     def create_calliope(current_date: datetime, last_service_date: datetime, current_mileage: int, last_service_mileage: int) -> Car:
-        pass
+        engine = CapuletEngine()
+        battery = SpindlerBattery()
+        calliope = Car(engine,battery)
+
+        return calliope
 
 
     def create_glissade(current_date: datetime, last_service_date: datetime, current_mileage: int, last_service_mileage: int) -> Car:
