@@ -28,7 +28,7 @@ class CarFactory(ABC):
 
 
     def create_palindrome(current_date: datetime, last_service_date: datetime, warning_light_on: bool) -> Car:
-        engine = SternmanEngine(current_mileage, last_service_mileage)
+        engine = SternmanEngine(warning_light_on)
         battery = SpindlerBattery(last_service_date, current_date)
         palindrome = Car(engine,battery)
 
