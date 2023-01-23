@@ -8,5 +8,5 @@ class SpindlerBattery(Battery):
         self.current_date = current_date
 
     def needs_service(self) -> bool:
-        year_threshold = self.last_service_date.replace(year=self.last_service_date.year + 2)
+        year_threshold = self.last_service_date.replace(year=self.last_service_date.year + 3)
         return self.current_date >= year_threshold
